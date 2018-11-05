@@ -1,0 +1,21 @@
+{
+  "name": "robatron",
+  "version": "1.0.0",
+  "description": "personal websit 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "sass": "^1.14.3"
+  }
+}
