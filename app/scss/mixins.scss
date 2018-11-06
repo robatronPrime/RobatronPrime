@@ -1,0 +1,6 @@
+@mixin flexbox($dir: row, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+}
+
