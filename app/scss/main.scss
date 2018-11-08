@@ -1,6 +1,8 @@
 //Utils
-@import "reset";
-@import "typography";
+@import "utils/reset";
+@import "utils/typography";
 
 //Layout
-@import "header";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";

@@ -1,0 +1,30 @@
+.footer {
+  @include flexbox(row);
+  justify-content: center;
+
+  &__nav {
+      @include flexbox(column);
+      justify-content: center;
+      align-content: center;
+
+      &__list {
+          @include flexbox(column);
+          justify-content: space-evenly;
+          text-align: center;
+
+          &__link {
+              
+              a {
+                  color: #000;
+                  text-decoration: none;
+
+                  &:hover {
+                      color: aqua;
+                  }
+              }
+              
+              
+          }
+      }
+  }
+}
