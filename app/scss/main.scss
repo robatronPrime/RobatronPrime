@@ -1,8 +1,13 @@
+@import "base";
+
 //Utils
 @import "utils/reset";
 @import "utils/typography";
+@import "utils/mixins";
 
 //Layout
-@import "layout/grid";
-@import "layout/header";
+@import "layout/main";
 @import "layout/footer";
+
+//Sections
+@import "sections/profile";

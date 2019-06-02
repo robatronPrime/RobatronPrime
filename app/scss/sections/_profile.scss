@@ -1,0 +1,19 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    max-width: 18rem;
+    padding: 1rem 0;
+  }
+
+  &__content {
+    display: inherit;
+    flex-direction: column;
+  }
+
+  
+}

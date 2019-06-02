@@ -1,3 +1,26 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: #444444; }
+  a:hover, a:focus {
+    text-decoration: underline; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+button {
+  cursor: pointer;
+  padding: 0; }
+
+.wrappper {
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 50rem; }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -49,58 +72,23 @@ h1, h2, h3, h4, h5, h6 {
 
 p, a {
   font-weight: 400;
-  letter-spacing: .1rem; }
+  letter-spacing: .2rem; }
 
 h1 {
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem; }
 
 h2, h3 {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  margin-bottom: 1rem; }
 
 p, a {
-  font-size: 1rem; }
+  font-size: 1.2rem;
+  margin-bottom: .5rem; }
 
-.grid {
-  display: grid;
-  grid-template-columns: 0.2fr repeat(2, 1fr);
-  grid-gap: 1rem;
-  grid-template-rows: repeat(2, 1fr) 0.3fr;
-  height: 100%; }
-  .grid__one {
-    grid-column: 1;
-    grid-row: 1 / 4; }
-  .grid__two {
-    grid-column: 2 / 4;
-    grid-row: 1 / 3; }
-  .grid__three {
-    grid-column: 2 / 4;
-    grid-row: 3; }
-
-.header {
+.main {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center; }
-  .header__nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    writing-mode: vertical-rl; }
-    .header__nav__list {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-evenly;
-      max-width: 1rem;
-      width: 100%;
-      text-align: center; }
-      .header__nav__list__link a {
-        color: #000;
-        text-decoration: none; }
-        .header__nav__list__link a:hover {
-          color: aqua; }
+  flex-direction: column; }
 
 .footer {
   display: flex;
@@ -124,3 +112,16 @@ p, a {
         text-decoration: none; }
         .footer__nav__list__link a:hover {
           color: aqua; }
+
+.profile {
+  display: flex;
+  flex-direction: column; }
+  .profile__img {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    max-width: 18rem;
+    padding: 1rem 0; }
+  .profile__content {
+    display: inherit;
+    flex-direction: column; }
