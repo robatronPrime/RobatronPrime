@@ -49,6 +49,8 @@
     "pkgconfig": "^3.2.0",
     "svg4everybody": "^2.1.8",
     "trianglify": "^1.1.0",
-    "zeromq": "^4.6.0"
+    "zeromq": "^4.6.0",
+    "js-yaml": ">=3.13.1",
+    "axios": ">=0.18.1"
   }
 }
