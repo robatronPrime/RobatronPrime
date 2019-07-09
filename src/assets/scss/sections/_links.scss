@@ -13,7 +13,7 @@
 
       li { //make pokeball!
 
-        a {
+        .animated {
           position: relative;
           width: 100%;
           height: 100%;
@@ -27,7 +27,7 @@
           border-radius: 50%;
           overflow: hidden;
 
-          span {
+          .animatedSpan {
             content: '';
             position: absolute;
             top: 0;
@@ -55,17 +55,22 @@
             transition: .3s all;
             z-index: 0;
           }
-          
-          svg {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            max-width: 3rem;
-            z-index: 1;
+
+          &__svg-wrapper {
             background: #fff;
             border-radius: 50%;
+            z-index: 1;
+
+            svg {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              max-width: 3rem;
+              padding: .3rem;
+            }
           }
+          
         }
       }
     }
