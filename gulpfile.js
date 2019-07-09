@@ -141,10 +141,10 @@ const styles = function STYLES(done) {
 
 };
 
-const fontAwesome = () => {
-  return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
-  .pipe(gulp.dest('build/webfonts'));
-}
+// const fontAwesome = () => {
+//   return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+//   .pipe(gulp.dest('build/webfonts'));
+// }
 
 const scriptsWatch = function SCRIPTSWATCH(done) {
   scripts(true, done);
@@ -253,10 +253,10 @@ const staging = () => {
 }
 
 
-gulp.task('dev', gulp.series(clean, gulp.parallel(pages, styles, fontAwesome, images, svgSpriter, copyFavicons, watcher), server));
+gulp.task('dev', gulp.series(clean, gulp.parallel(pages, styles, images, svgSpriter, copyFavicons, watcher), server));
 
 
-gulp.task('build', gulp.series(clean, gulp.parallel(pages, styles, fontAwesome, images, svgSpriter, copyFavicons, scriptsBuild)));
+gulp.task('build', gulp.series(clean, gulp.parallel(pages, styles, images, svgSpriter, copyFavicons, scriptsBuild)));
 
 gulp.task('package', gulp.series('build', addHeadContent('live'), package));
 

@@ -1,0 +1,17 @@
+@keyframes shake {
+  10%, 90% {
+    transform: rotate(0.01turn);
+  }
+  
+  20%, 80% {
+    transform: rotate(-0.01turn);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(0.01turn);
+  }
+
+  40%, 60% {
+    transform: rotate(-0.01turn);
+  }
+}
