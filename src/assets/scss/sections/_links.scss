@@ -27,7 +27,7 @@
           border-radius: 50%;
           overflow: hidden;
 
-          &::before {
+          span {
             content: '';
             position: absolute;
             top: 0;
@@ -35,13 +35,9 @@
             height: 50%;
             background: #ff0000;
             transform: translateX(100%);
-            transition: .3s all;
           }
 
           &:hover {
-            &::before {
-              transform: none;
-            }
             &::after {
               transform: none;
             }
@@ -74,6 +70,10 @@
       }
     }
   }
+}
+
+.mouseOver {
+  animation: pokeSlide 0.3s both;
 }
                                         
 .shake {
