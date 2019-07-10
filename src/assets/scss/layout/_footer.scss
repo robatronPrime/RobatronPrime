@@ -9,6 +9,9 @@
   &__credit {
     width: 100%;
     text-align: center;
-    font-size: .5rem;
+
+    p, a {
+      font-size: .5rem;
+    }
   }
 }
