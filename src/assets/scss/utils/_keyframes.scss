@@ -24,3 +24,30 @@
     transform: none;
   }
 }
+
+@keyframes pokeSlideRev {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes lightOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .7;
+  }
+}
+
+@keyframes lightOff {
+  from {
+    opacity: .7;
+  }
+  to {
+    opacity: 0;
+  }
+}

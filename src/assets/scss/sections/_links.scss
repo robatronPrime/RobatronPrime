@@ -81,6 +81,10 @@
 .mouseOver {
   animation: pokeSlide 0.3s both;
 }
+
+.mouseOff {
+  animation: pokeSlideRev 0.3s both;
+}
                                         
 .shake {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;

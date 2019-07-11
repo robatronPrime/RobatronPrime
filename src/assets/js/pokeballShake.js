@@ -1,12 +1,13 @@
-const animated = document.querySelectorAll('.animated');
+import {intiHoverAnimation} from './utils';
+
+const animated = [].slice.call(document.querySelectorAll('.animated'));
 
 animated.forEach(animate => {
   
   const animatedSpan = animate.querySelector('.animatedSpan');
-  
-  animate.addEventListener('mouseover', () => animatedSpan.classList.add('mouseOver'));
-  
-  animate.addEventListener('mouseout', () => animatedSpan.classList.remove('mouseOver'));
+
+  intiHoverAnimation('mouseover', 'mouseOff', 'mouseOver', animate, animatedSpan);
+  intiHoverAnimation('mouseout', 'mouseOver', 'mouseOff', animate, animatedSpan);
 
   animate.addEventListener('animationend', () => animate.classList.toggle('shake'));
 
