@@ -1,6 +1,5 @@
 .profile {
-  display: flex;
-  flex-direction: column;
+  @include flexbox(column);
   align-items: center;
   justify-content: center;
   position: relative;
@@ -12,10 +11,6 @@
   }
 
   &__content {
-    display: inherit;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     z-index: 1;
   }

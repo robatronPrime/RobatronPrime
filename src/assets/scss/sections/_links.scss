@@ -6,22 +6,23 @@
     margin: 0 auto;
     
     &__list {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      padding: 1rem;
+      @include flexbox(row, wrap);
+      justify-content: space-around;
+      align-items: center;
+      margin: 1rem;
 
-      li { //make pokeball!
+      li {
+        margin: 1rem;
 
         .animated {
           position: relative;
           width: 100%;
           height: 100%;
-          display: flex;
+          @include flexbox();
           justify-content: center;
           align-items: center;
           margin: 0;
-          padding: 2rem;
+          padding: 1rem;
           background: #fff;
           border: 0.0625rem solid $tertiary-colour;
           border-radius: 50%;
@@ -62,7 +63,7 @@
             z-index: 1;
 
             svg {
-              display: flex;
+              @include flexbox();
               justify-content: center;
               align-items: center;
               width: 100%;
