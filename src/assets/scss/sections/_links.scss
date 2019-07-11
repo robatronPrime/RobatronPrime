@@ -91,3 +91,10 @@
   transform: rotate(0);
   backface-visibility: hidden;
 }
+
+@media (min-width: 48em) {
+  .links {
+    // position: fixed;
+    // top: 10rem;
+  }
+}

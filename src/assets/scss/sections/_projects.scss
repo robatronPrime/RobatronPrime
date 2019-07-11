@@ -105,3 +105,16 @@
 .lightOff {
   animation: lightOff 0.2s ease-out both;
 }
+
+@media (min-width: 48em) {
+  .projects {
+
+    &__wrap {
+      display: grid;
+      grid-template-columns: repeat(5, 2fr);
+      grid-column-gap: 2rem;
+    }
+
+  }
+
+}

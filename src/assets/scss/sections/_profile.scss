@@ -2,7 +2,6 @@
   @include flexbox(column);
   align-items: center;
   justify-content: center;
-  position: relative;
   padding-top: 2rem;
 
   h1 {
@@ -15,5 +14,10 @@
     z-index: 1;
   }
 
-  
+}
+
+@media (min-width: 48em) {
+  .profile {
+    // position: fixed;
+  }
 }
