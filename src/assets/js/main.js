@@ -1,2 +1,3 @@
+import './loginingSystem';
 import './pokeballShake';
-import './lightOn';
+import './auth';
