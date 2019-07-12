@@ -1,3 +1,5 @@
+const app = angular.module('app', []);
+
 app.controller('GoogleCtrl', () => {
 
   const onSignIn = (googleUser) => {
