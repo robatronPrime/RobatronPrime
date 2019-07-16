@@ -1,5 +1,6 @@
 .projects {
   margin: 2rem 0;
+  text-align: center;
 
   &__wrap {
     @include flexbox(column);
