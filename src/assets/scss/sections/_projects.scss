@@ -87,6 +87,8 @@
         padding: 0.5rem 0;
         overflow: hidden;
         margin: 0;
+        pointer-events: all;
+        cursor: pointer;
 
         &:hover {
           text-decoration: none;
