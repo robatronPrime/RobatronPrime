@@ -1,5 +1,15 @@
-<section class="auth" ng-controller="GoogleCtrl">
+<section class="auth wrapper" ng-app="app">
 
+  <div ng-controller="GAuthCtrl">
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <a class="signout" ng-click="signOut()">Sign out</a>
+    <p ng-model="message"></p>
+    {{ message }}
+  </div>
+
+  <form ng-submit="updateMessage(newMessage)">
+      <input type="text" ng-model="newMessage">
+      <button type="submit">Update Message</button>
+    </form>
 
 </section>

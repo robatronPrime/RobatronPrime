@@ -39,7 +39,6 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "angular": "^1.7.8",
     "axios": ">=0.18.1",
     "countup.js": "^1.8.4",
     "del": "^3.0.0",
