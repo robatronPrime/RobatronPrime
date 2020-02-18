@@ -95,7 +95,8 @@
 
 var cardValues = ["1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "1B", "2B", "3B", "4B", "5B", "6B", "7B", "8B"];
 var deck = document.querySelector('.card-game__board');
-var cards = []; //template for card
+var cards = [];
+var started = false; //template for card
 
 var cardTemplate = function cardTemplate() {
   var cardTemplate = document.createElement("div");
@@ -136,12 +137,28 @@ var deal = function deal(cardsArray) {
       gridMath(cardsArray, 4);
     }
   });
-}; // init
+};
 
+var cardClick = function cardClick() {
+  var cardsInplay = [];
+  if (!started === true) return;
+  document.addEventListener('click', function (_ref) {
+    var target = _ref.target;
+    if (!target.classList.contains('card')) return;
+    cardsInplay.push(target);
+    console.log(cardsInplay);
+  });
+};
 
-buildCards(cardValues);
-displayCards(cards);
-deal(cards);
+var startGame = function startGame() {
+  buildCards(cardValues);
+  displayCards(cards);
+  deal(cards);
+  started = true;
+  cardClick();
+};
+
+startGame();
 
 /***/ }),
 

@@ -2,6 +2,7 @@ const cardValues = ["1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "1B", "2B", 
 const deck = document.querySelector('.card-game__board');
 
 let cards = [];
+let started = false;
 
 //template for card
 const cardTemplate = () => {
@@ -33,7 +34,7 @@ const gridMath = (cardsArray, cols) => {
   });
 }
 
-const deal = (cardsArray) => {
+const deal = cardsArray => {
   deck.addEventListener('click', () => {
     if (window.screen.width < 600  ) {
       gridMath(cardsArray, 3);
@@ -43,7 +44,22 @@ const deal = (cardsArray) => {
   });
 }
 
-// init
-buildCards(cardValues);
-displayCards(cards);
-deal(cards);
+const cardClick = () => {
+  let cardsInplay = [];
+  if(!started === true) return;
+  document.addEventListener('click', ({target}) => {
+    if (!target.classList.contains('card')) return;
+    cardsInplay.push(target);
+    console.log(cardsInplay);
+  });
+}
+
+const startGame = () => {
+  buildCards(cardValues);
+  displayCards(cards);
+  deal(cards);
+  started = true;
+  cardClick();
+}
+
+startGame();
