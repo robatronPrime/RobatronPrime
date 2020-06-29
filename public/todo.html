@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="google-signin-client_id"
+      content="38415077060-bd9df6no8hqv5bv4llv58u5569k8rc31.apps.googleusercontent.com"
+    />
+
+    <!-- LINKS -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+
+    <!-- TITLE -->
+    <title>rob-stow.dev</title>
+
+    <!-- SCRIPTS -->
+    <!-- <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script> -->
+    <script type="text/javascript" src="js/main.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  </head>
+  <body>
+    <body>
+      <header class="todos-header">
+        <div class="todos-header__back">
+          <a href="/">< back</a>
+        </div>
+        <h1>Rob's Todo List</h1>
+      </header>
+
+      <form class="todos">
+        <div class="todos__add">
+          <input type="text" class="todos__input" />
+          <button class="todos__button" type="submit">
+            <p>add</p>
+          </button>
+        </div>
+        <div class="todos__select">
+          <select name="todos" class="todos__select__filter">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+          </select>
+        </div>
+      </form>
+      <div class="todos__container">
+        <ul class="todos__list"></ul>
+      </div>
+
+      <script src="/app.js"></script>
+    </body>
+  </body>
+</html>

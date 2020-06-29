@@ -1,0 +1,63 @@
+.todo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem;
+  background-color: $secondary-colour;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.25rem;
+
+  &__item,
+  .complete-button,
+  .trash-button {
+    border: none;
+  }
+
+  .complete-button,
+  .trash-button {
+    padding: 1.1875rem;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    color: $secondary-colour;
+
+    i {
+      pointer-events: none;
+    }
+  }
+
+  &__item {
+    padding: 1rem;
+    width: 70%;
+    list-style: none;
+    color: $tertiary-colour;
+  }
+
+  .complete-button {
+    background-color: #2fff2f;
+
+    &:hover {
+      background-color: $secondary-colour;
+      color: #2fff2f;
+    }
+  }
+
+  .trash-button {
+    background-color: #eb3e20;
+
+    &:hover {
+      background-color: $secondary-colour;
+      color: #eb3e20;
+    }
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}

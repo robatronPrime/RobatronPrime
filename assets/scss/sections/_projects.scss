@@ -3,9 +3,12 @@
   text-align: center;
 
   &__wrap {
-    @include flexbox(column);
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    justify-items: center;
+    padding: 0 2rem;
   }
 
   .project {
@@ -13,9 +16,8 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    max-width: 25rem;
-    margin: 1rem 0;
-    padding: 2rem;
+    height: 100%;
+    padding: 0 2rem;
     background: $primary-colour;
 
     &:hover {
@@ -31,18 +33,18 @@
       position: relative;
       z-index: 0;
       width: 100%;
+      max-width: 25rem;
       padding-bottom: 15rem;
       background: {
         size: 100%;
         repeat: no-repeat;
         position: center;
       }
-      
+
       img {
         width: 100%;
         height: 100%;
       }
-
 
       &__svg {
         position: absolute;
@@ -51,8 +53,8 @@
         max-width: 3rem;
         z-index: 2;
         opacity: 0;
-        transition: .3s all;
-        
+        transition: 0.3s all;
+
         svg {
           width: 100%;
           height: 100%;
@@ -66,9 +68,7 @@
             z-index: 1;
           }
         }
-
       }
-
     }
 
     &__content {
@@ -95,13 +95,9 @@
           text-decoration: none;
           border-bottom: 0.0625rem solid $tertiary-colour;
         }
-
       }
-
     }
-
   }
-
 }
 
 .lightOn {
@@ -113,15 +109,19 @@
 }
 
 @media (min-width: 48em) {
+  // 768px
   .projects {
-
     &__wrap {
-      display: grid;
-      grid-template-columns: repeat(3, 2fr);
-      grid-column-gap: 2rem;
-      justify-items: center;
+      grid-template-columns: repeat(2, 2fr);
     }
-
   }
+}
 
+@media (min-width: 75em) {
+  // 1200px
+  .projects {
+    &__wrap {
+      grid-template-columns: repeat(3, 2fr);
+    }
+  }
 }

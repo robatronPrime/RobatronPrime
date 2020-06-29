@@ -1,25 +1,30 @@
+@charset "UTF-8";
 .primary-colour {
-  color: #F4F9F9;
+  color: #d3f2f2;
 }
 
 .secondary-colour {
-  color: #DCF5F5;
+  color: #dcf5f5;
 }
 
 .tertiary-colour {
-  color: #99ADAD;
+  color: #99adad;
 }
 
 .alt-primary-colour {
-  color: #A89387;
+  color: #a89387;
 }
 
 .alt-primary-colour {
-  color: #A89387;
+  color: #a89387;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -54,6 +59,14 @@ button {
 svg {
   width: 100%;
   height: 100%;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -106,34 +119,42 @@ ol, ul, li {
   list-style: none;
 }
 
-html, body, .content {
+html,
+body,
+.content {
   font-family: "Montserrat", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   letter-spacing: 0.1rem;
 }
 
-p, a {
+p,
+a {
   font-weight: 400;
   letter-spacing: 0.2rem;
 }
 
 h1 {
   font-size: 2.2rem;
-  margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-p, a {
+p,
+a {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
 }
 
 @-webkit-keyframes shake {
@@ -330,7 +351,7 @@ p, a {
   margin: 0;
   padding: 1rem;
   background: #fff;
-  border: 0.0625rem solid #99ADAD;
+  border: 0.0625rem solid #99adad;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -405,15 +426,12 @@ p, a {
   text-align: center;
 }
 .projects__wrap {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  -webkit-box-align: center;
-          align-items: center;
+  display: grid;
+  grid-template-columns: repeat(1, 2fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  justify-items: center;
+  padding: 0 2rem;
 }
 .projects .project {
   display: -webkit-box;
@@ -426,10 +444,9 @@ p, a {
   -webkit-box-align: center;
           align-items: center;
   width: 100%;
-  max-width: 25rem;
-  margin: 1rem 0;
-  padding: 2rem;
-  background: #F4F9F9;
+  height: 100%;
+  padding: 0 2rem;
+  background: #d3f2f2;
 }
 .projects .project:hover .project__img__svg {
   opacity: 1;
@@ -447,6 +464,7 @@ p, a {
   position: relative;
   z-index: 0;
   width: 100%;
+  max-width: 25rem;
   padding-bottom: 15rem;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -504,7 +522,7 @@ p, a {
 }
 .projects .project__content a:hover {
   text-decoration: none;
-  border-bottom: 0.0625rem solid #99ADAD;
+  border-bottom: 0.0625rem solid #99adad;
 }
 
 .lightOn {
@@ -519,10 +537,12 @@ p, a {
 
 @media (min-width: 48em) {
   .projects__wrap {
-    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+@media (min-width: 75em) {
+  .projects__wrap {
     grid-template-columns: repeat(3, 2fr);
-    grid-column-gap: 2rem;
-    justify-items: center;
   }
 }
 .card-game {
@@ -553,4 +573,150 @@ p, a {
   background-image: url("../images/cards/back.png");
   background-repeat: no-repeat;
   background-position: center;
+  pointer-events: none;
+}
+
+.todos,
+.todos-header {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 20vh;
+}
+
+.todos-header__back {
+  content: "";
+  position: absolute;
+  left: 1rem;
+}
+
+.todos__add {
+  display: -webkit-box;
+  display: flex;
+}
+.todos__input, .todos__button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  color: #99adad;
+  background: #dcf5f5;
+}
+.todos__button {
+  background-color: #dcf5f5;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.todos__button:hover {
+  color: #dcf5f5;
+  background-color: #99adad;
+}
+.todos__select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  width: 15%;
+  color: #99adad;
+}
+.todos__select__filter {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #dcf5f5;
+  color: #99adad;
+  font-size: 2rem;
+  color: #99adad;
+  cursor: pointer;
+}
+.todos__select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100%;
+  width: 15%;
+  background: #dcf5f5;
+  color: #99adad;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.todos__select:hover::after {
+  color: #dcf5f5;
+  background-color: #99adad;
+}
+.todos__list {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.todo {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0.5rem;
+  background-color: #dcf5f5;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.25rem;
+}
+.todo__item,
+.todo .complete-button,
+.todo .trash-button {
+  border: none;
+}
+.todo .complete-button,
+.todo .trash-button {
+  padding: 1.1875rem;
+  height: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #dcf5f5;
+}
+.todo .complete-button i,
+.todo .trash-button i {
+  pointer-events: none;
+}
+.todo__item {
+  padding: 1rem;
+  width: 70%;
+  list-style: none;
+  color: #99adad;
+}
+.todo .complete-button {
+  background-color: #2fff2f;
+}
+.todo .complete-button:hover {
+  background-color: #dcf5f5;
+  color: #2fff2f;
+}
+.todo .trash-button {
+  background-color: #eb3e20;
+}
+.todo .trash-button:hover {
+  background-color: #dcf5f5;
+  color: #eb3e20;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  -webkit-transform: translateY(8rem) rotateZ(20deg);
+          transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
 }

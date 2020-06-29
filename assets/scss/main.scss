@@ -1,22 +1,24 @@
-@import "colours";
-@import "base";
+@import 'colours';
+@import 'base';
 
 //Utils
-@import "utils/reset";
-@import "utils/typography";
-@import "utils/mixins";
-@import "utils/keyframes";
+@import 'utils/reset';
+@import 'utils/typography';
+@import 'utils/mixins';
+@import 'utils/keyframes';
 
 //Layout
-@import "layout/main";
-@import "layout/footer";
+@import 'layout/main';
+@import 'layout/footer';
 
 //Sections
-@import "sections/profile";
-@import "sections/links";
-@import "sections/projects";
+@import 'sections/profile';
+@import 'sections/links';
+@import 'sections/projects';
 
 // Components
-@import "components/card-game";
-@import "components/deck";
-@import "components/card";
+@import 'components/card-game';
+@import 'components/deck';
+@import 'components/card';
+@import 'components/todos';
+@import 'components/todo';

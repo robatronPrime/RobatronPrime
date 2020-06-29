@@ -1,0 +1,86 @@
+.todos,
+.todos-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+}
+
+.todos-header {
+  &__back {
+    content: '';
+    position: absolute;
+    left: 1rem;
+  }
+}
+
+.todos {
+  &__add {
+    display: flex;
+  }
+
+  &__input,
+  &__button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    color: $tertiary-colour;
+    background: $secondary-colour;
+  }
+
+  &__button {
+    background-color: $secondary-colour;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $secondary-colour;
+      background-color: $tertiary-colour;
+    }
+  }
+
+  &__select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    width: 15%;
+    color: $tertiary-colour;
+
+    &__filter {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: $secondary-colour;
+      color: $tertiary-colour;
+      font-size: 2rem;
+      color: $tertiary-colour;
+      cursor: pointer;
+    }
+
+    &::after {
+      content: '\25BC';
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 15%;
+      background: $secondary-colour;
+      color: $tertiary-colour;
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      color: $secondary-colour;
+      background-color: $tertiary-colour;
+    }
+  }
+
+  &__list {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

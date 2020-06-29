@@ -1,29 +1,37 @@
-html, body, .content {
+html,
+body,
+.content {
   font-family: 'Montserrat', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
-p, a {
+p,
+a {
   font-weight: 400;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 h1 {
   font-size: 2.2rem;
-  margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-p, a {
+p,
+a {
   font-size: 1.2rem;
-  margin-bottom: .5rem;
 }
