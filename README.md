@@ -1,12 +1,9 @@
 # RobatronPrime
 
-### To compile the scss files:
-sass --watch app/scss/main.scss:app/css/main.css
+## To run dev env
 
-## Gulp tasks
+npm run development
 
-Static Server + watching scss/html files `gulp serve`.
+## To run prod env
 
-Compile sass into CSS & auto-inject into browsers `gulp sass`.
-
-Run `gulp` in commad line to start dev enviroment. 
+npm run production
