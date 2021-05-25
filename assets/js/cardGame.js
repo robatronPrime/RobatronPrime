@@ -59,7 +59,7 @@ const gridMath = (cardsArray) => {
     let left = 1 + 6 * (i % cols);
     card.style.left = `${left}rem`;
     card.style.top = `${top}rem`;
-    card.style.transition = `left ${Math.floor(i + 10 / 2)}s, top ${Math.floor(i + 10 / 3)}s, transform 1s`;
+    card.style.transition = `left ${i + 0.5 / 4}s, top ${i + 0.5 / 7}s, transform 1s`;
     card.style.transitionDelay = `${i / 3}s`;
     i++;
     card.classList.add('card--deal');

@@ -139,7 +139,7 @@ var gridMath = function gridMath(cardsArray) {
     var left = 1 + 6 * (i % cols);
     card.style.left = "".concat(left, "rem");
     card.style.top = "".concat(top, "rem");
-    card.style.transition = "left ".concat(Math.floor(i + 10 / 2), "s, top ").concat(Math.floor(i + 10 / 3), "s, transform 1s");
+    card.style.transition = "left ".concat(i + 0.5 / 4, "s, top ").concat(i + 0.5 / 7, "s, transform 1s");
     card.style.transitionDelay = "".concat(i / 3, "s");
     i++;
     card.classList.add('card--deal');

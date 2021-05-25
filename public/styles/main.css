@@ -488,6 +488,10 @@ a {
   background-position: center;
   z-index: 2;
 }
+.card:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
 .card--deal {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0.2, 0.4, 0);
           transition-timing-function: cubic-bezier(0.4, 0.2, 0.4, 0);
