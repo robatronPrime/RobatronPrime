@@ -94,9 +94,20 @@
 /***/ (function(module, exports) {
 
 var cardValues = ['1A', '2A', '3A', '4A', '5A', '6A', '7A', '8A', '1B', '2B', '3B', '4B', '5B', '6B', '7B', '8B'];
-var deck = document.querySelector('.deck');
+var deck = document.querySelector('.card-game__board');
+var play = document.querySelector('.card-game__play');
 var cards = [];
-var started = false; //template for card
+var started = false;
+
+function shuffleArray(array) {
+  for (var _i = array.length - 1; _i > 0; _i--) {
+    var j = Math.floor(Math.random() * (_i + 1));
+    var _ref = [array[j], array[_i]];
+    array[_i] = _ref[0];
+    array[j] = _ref[1];
+  }
+} //template for card
+
 
 var cardTemplate = function cardTemplate() {
   var cardTemplate = document.createElement('div');
@@ -118,52 +129,77 @@ var displayCards = function displayCards(cardsArray) {
   });
 };
 
-var gridMath = function gridMath(cardsArray, cols) {
+var gridMath = function gridMath(cardsArray) {
   i = 0;
+  var cols = 3;
+  if (window.screen.width > 600) cols = 4;
+  if (window.screen.width > 900) cols = 8;
   cardsArray.forEach(function (card) {
     var top = 1 + 8 * Math.floor(i / cols);
     var left = 1 + 6 * (i % cols);
     card.style.left = "".concat(left, "rem");
     card.style.top = "".concat(top, "rem");
+    card.style.transition = "left ".concat(Math.floor(i + 10 / 2), "s, top ").concat(Math.floor(i + 10 / 3), "s, transform 1s");
+    card.style.transitionDelay = "".concat(i / 3, "s");
     i++;
+    card.classList.add('card--deal');
   });
 };
 
 var deal = function deal(cardsArray) {
-  deck.addEventListener('click', function () {
-    if (window.screen.width < 600) {
-      gridMath(cardsArray, 3);
-    } else {
-      gridMath(cardsArray, 4);
-    }
-
-    return started = true;
+  play.addEventListener('click', function () {
+    gridMath(cardsArray);
+    started = true;
   });
+};
+
+var hideCard = function hideCard(card) {
+  card.style.display = 'none';
 };
 
 var cardClick = function cardClick() {
-  var cardsInplay = [];
-  document.addEventListener('click', function (_ref) {
-    var target = _ref.target;
+  var card1 = '';
+  document.addEventListener('click', function (_ref2) {
+    var target = _ref2.target;
+    if (started !== true) return;
     if (!target.classList.contains('card')) return;
+    target.animate([{
+      transform: 'scale(1.2)'
+    }, {
+      transform: 'rotate(0deg)'
+    }], {
+      duration: 1000
+    });
+    target.style.backgroundImage = "url(../images/cards/".concat(target.dataset.value, ".png)");
 
-    if (cardsInplay.includes(target.dataset.value) !== true) {
-      cardsInplay.push(target.dataset.value);
+    if (card1 === '') {
+      card1 = target;
+    } else if (parseInt(card1.dataset.value) === parseInt(target.dataset.value) && target.classList !== card1.classList) {
+      window.setTimeout(function () {
+        hideCard(card1);
+        hideCard(target);
+        card1 = '';
+      }, 1000);
     } else {
-      console.log('Try a different card!');
+      window.setTimeout(function () {
+        target.style.backgroundImage = 'url("../images/cards/back.png")';
+        card1.style.backgroundImage = 'url("../images/cards/back.png")';
+        card1 = '';
+      }, 1000);
     }
   });
 };
 
-var startGame = function startGame() {
+var init = function init() {
   if (deck === null) return;
+  shuffleArray(cardValues);
   buildCards(cardValues);
   displayCards(cards);
   deal(cards);
   cardClick();
 };
 
-startGame();
+init();
 
 /***/ }),
 

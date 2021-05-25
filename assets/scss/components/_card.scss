@@ -1,11 +1,16 @@
 .card {
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 7rem;
-  width: 5rem;
-  background-image: url('../images/cards/back.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -7rem;
+    height: 7rem;
+    width: 5rem;
+    background-image: url("../images/cards/back.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+
+    &--deal {
+        transition-timing-function: cubic-bezier(0.4, 0.2, 0.4, 0);
+    }
 }

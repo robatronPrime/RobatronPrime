@@ -144,6 +144,7 @@ a {
 h1 {
   font-size: 2.2rem;
   text-transform: uppercase;
+  margin: 0 0 2rem;
 }
 
 h2,
@@ -314,6 +315,8 @@ a {
 
 .links {
   width: 100%;
+  text-align: center;
+  margin-top: 2rem;
 }
 .links .nav {
   width: 100%;
@@ -333,92 +336,6 @@ a {
 }
 .links .nav__list li {
   margin: 1rem;
-}
-.links .nav__list li .animated {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  flex-wrap: nowrap;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-  margin: 0;
-  padding: 1rem;
-  background: #fff;
-  border: 0.0625rem solid #99adad;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.links .nav__list li .animated .animatedSpan {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50%;
-  background: #ff0000;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-}
-.links .nav__list li .animated:hover::after {
-  -webkit-transform: none;
-          transform: none;
-}
-.links .nav__list li .animated::after {
-  content: "";
-  position: absolute;
-  bottom: 50%;
-  width: 100%;
-  height: 0.5rem;
-  background: #000;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  z-index: 0;
-}
-.links .nav__list li .animated__svg-wrapper {
-  background: #fff;
-  border-radius: 50%;
-  z-index: 1;
-}
-.links .nav__list li .animated__svg-wrapper svg {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  flex-wrap: nowrap;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-  max-width: 3rem;
-  margin: 0.3rem;
-}
-
-.mouseOver {
-  -webkit-animation: pokeSlide 0.3s both;
-          animation: pokeSlide 0.3s both;
-}
-
-.mouseOff {
-  -webkit-animation: pokeSlideRev 0.3s both;
-          animation: pokeSlideRev 0.3s both;
-}
-
-.shake {
-  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .projects {
@@ -465,6 +382,7 @@ a {
   z-index: 0;
   width: 100%;
   max-width: 25rem;
+  margin: 1rem;
   padding-bottom: 15rem;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -554,26 +472,25 @@ a {
   width: 100%;
   max-width: 50rem;
   margin: 0 auto;
-  padding-bottom: 50rem;
+  padding-bottom: 20rem;
   position: relative;
-}
-
-.deck {
-  position: relative;
-  display: block;
-  width: 100%;
 }
 
 .card {
   content: "";
   position: absolute;
   top: 0;
+  left: -7rem;
   height: 7rem;
   width: 5rem;
   background-image: url("../images/cards/back.png");
   background-repeat: no-repeat;
   background-position: center;
-  pointer-events: none;
+  z-index: 2;
+}
+.card--deal {
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0.2, 0.4, 0);
+          transition-timing-function: cubic-bezier(0.4, 0.2, 0.4, 0);
 }
 
 .todos,
@@ -719,4 +636,91 @@ a {
   -webkit-transform: translateY(8rem) rotateZ(20deg);
           transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
+}
+
+.animated {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 1rem;
+  background: #fff;
+  border: 0.0625rem solid #99adad;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.animated .animatedSpan {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background: #ff0000;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.animated:hover::after {
+  -webkit-transform: none;
+          transform: none;
+}
+.animated::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  height: 0.5rem;
+  background: #000;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  z-index: 0;
+}
+.animated__svg-wrapper {
+  background: #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+.animated__svg-wrapper svg {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  max-width: 3rem;
+  margin: 0.3rem;
+}
+
+.mouseOver {
+  -webkit-animation: pokeSlide 0.3s both;
+          animation: pokeSlide 0.3s both;
+}
+
+.mouseOff {
+  -webkit-animation: pokeSlideRev 0.3s both;
+          animation: pokeSlideRev 0.3s both;
+}
+
+.shake {
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }

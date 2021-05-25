@@ -1,92 +1,21 @@
 .links {
-  width: 100%;
-
-  .nav {
     width: 100%;
-    margin: 0 auto;
-    
-    &__list {
-      @include flexbox(row, wrap);
-      justify-content: space-around;
-      align-items: center;
-      margin: 1rem;
+    text-align: center;
+    margin-top: 2rem;
 
-      li {
-        margin: 1rem;
+    .nav {
+        width: 100%;
+        margin: 0 auto;
 
-        .animated {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          @include flexbox();
-          justify-content: center;
-          align-items: center;
-          margin: 0;
-          padding: 1rem;
-          background: #fff;
-          border: 0.0625rem solid $tertiary-colour;
-          border-radius: 50%;
-          overflow: hidden;
+        &__list {
+            @include flexbox(row, wrap);
+            justify-content: space-around;
+            align-items: center;
+            margin: 1rem;
 
-          .animatedSpan {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 50%;
-            background: #ff0000;
-            transform: translateX(100%);
-          }
-
-          &:hover {
-            &::after {
-              transform: none;
+            li {
+                margin: 1rem;
             }
-          }
-
-          
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: 50%;
-            width: 100%;
-            height: .5rem;
-            background: #000;
-            transform: translateX(-100%);
-            transition: .3s all;
-            z-index: 0;
-          }
-
-          &__svg-wrapper {
-            background: #fff;
-            border-radius: 50%;
-            z-index: 1;
-
-            svg {
-              @include flexbox();
-              justify-content: center;
-              align-items: center;
-              max-width: 3rem;
-              margin: .3rem;
-            }
-          }
-          
         }
-      }
     }
-  }
-}
-
-.mouseOver {
-  animation: pokeSlide 0.3s both;
-}
-
-.mouseOff {
-  animation: pokeSlideRev 0.3s both;
-}
-                                        
-.shake {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: rotate(0);
-  backface-visibility: hidden;
 }
